@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "home": "https://cleviobecerra.github.io/plantopia",
+  "homepage": "https://cleviobecerra.github.io/plantopia",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build --base /plantopia/",
@@ -16,8 +16,8 @@
     "docker-push": "docker push cleviobecerra/grupo-1-frontend:entrega-9",
     "docker-build": "docker build -t cleviobecerra/grupo-1-frontend:entrega-9 .",
     "docker-run": "docker run cleviobecerra/grupo-1-frontend:entrega-9",
-    "prepublish": "npm run build",
-    "publish": "gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useCart } from '../../CartContext';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate
+import { Link, useNavigate } from 'react-router-dom'; // Importa useNavigate
 import PaymentMethods from '../../components/PaymentMethods'; // Importa el componente
 import './CartPage.css';
 
@@ -25,7 +25,7 @@ const CartPage: React.FC = () => {
       alert('Por favor, selecciona un método de pago.');
     }
   };
-
+  console.log('carrito:',cartItems);
   return (
     <div className="cart-page-container">
       {/* Encabezado */}
@@ -85,7 +85,7 @@ const CartPage: React.FC = () => {
           <h3>Carrito de Compra</h3>
           {cartItems.map((item, index) => (
             <div className="cart-item-summary" key={index}>
-              <img src={item.imagenProducto} alt={item.nombreProducto} className="cart-item-image" />
+              <img src={item.imagenProducto.includes('uploads/productos') ? `http://3.142.12.50:4000${item.imagenProducto}` : item.imagenProducto} alt={item.nombreProducto} className="cart-item-image" />
               <div className="cart-item-details">
                 <p className="cart-item-name">{item.nombreProducto}</p>
                 <div className="cart-item-controls">
@@ -107,7 +107,9 @@ const CartPage: React.FC = () => {
                 <p className="cart-item-price">${(item.precio * (item.cantidad ?? 1)).toLocaleString()}</p>
                 <div className="cart-item-actions">
                   <button onClick={() => removeFromCart(item)} className="action-button">Eliminar</button>
-                  <button className="action-button">Ver producto</button>
+                  <Link to={`/productos/plantas/getbyid/${index}`}>
+                    <button className="action-button">Ver producto</button>
+                  </Link>
                 </div>
               </div>
             </div>

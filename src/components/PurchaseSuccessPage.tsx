@@ -17,16 +17,17 @@ const PurchaseSuccessPage: React.FC = () => {
           <img
             src="/home/compra.png" // Ruta correcta a la imagen en public
             alt="Compra exitosa"
+            
           />
         </div>
 
         {/* Detalles de compra */}
         <aside className="purchase-details">
           <h3>Detalle de tu compra</h3>
-          <p>01 de noviembre | #1342</p>
+          <p>09 de enero de 2025 | #1342</p>
           <div className="details-item">
             <span>Productos</span>
-            <span>$34.990</span>
+            <span>$4.000</span>
           </div>
           <div className="details-item">
             <span>Envío</span>
@@ -38,7 +39,7 @@ const PurchaseSuccessPage: React.FC = () => {
           </div>
           <div className="details-total">
             <span>Total</span>
-            <span>$34.990</span>
+            <span>$4.000</span>
           </div>
           <p className="payment-method">Pago mediante Webpay</p>
         </aside>

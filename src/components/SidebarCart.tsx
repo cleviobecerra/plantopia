@@ -37,7 +37,7 @@ const SidebarCart: React.FC<{ show: boolean; toggleSidebar: () => void }> = ({ s
                 <li key={index} className="cart-item">
                   {/* Imagen del producto */}
                   <img
-                    src={item.imagenProducto}
+                    src={item.imagenProducto.includes('uploads/productos') ? `http://3.142.12.50:4000${item.imagenProducto}` : item.imagenProducto}
                     alt={item.nombreProducto}
                     className="cart-item-image"
                   />
